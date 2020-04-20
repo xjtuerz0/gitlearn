@@ -1,0 +1,17 @@
+ssh-keygen -t rsa -C "youremail@example.com"
+#一路回车
+ssh -v git@github.com
+
+ssh-agent  -s
+
+ssh-add ~/.ssh/id_rsa
+#若报错“could not open....”则执行以下两步
+1. eval `ssh-agent  -s
+2. ssh-add ~/.ssh/id_rsa
+#未报错则执行
+
+cat ~/.ssh/id_ras.pub
+#复制生成的木遥到github的setting下，在SSH and GPG keys中，点击new SSH key将上面显示以ssh-rsa开头以该账号结尾的内容复制到key的位置，title可以自定义。然后点击Add SSH Key
+
+ssh -T git@github.com
+
